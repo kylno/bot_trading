@@ -1,0 +1,1 @@
+g++ -shared -o volatility.dll -fPIC volatility.cpp

@@ -1,0 +1,9 @@
+{
+  "email_expediteur": "klesournepro44@gmail.com",
+  "mot_de_passe_app": "oauu fehr fawk seev",
+  "chemin_pdf": "exports/fourmi_statut.pdf",
+  "chemin_graphes": "exports/",
+  "nom_bot": "BrainTrader-X1",
+  "theme_ui": "dark",
+  "vacances": false
+}

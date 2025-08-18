@@ -1,0 +1,31 @@
+{
+  "Casa de Papel": {
+    "style": "calme",
+    "type": "swing / daily",
+    "objectif": "bénéfice régulier",
+    "performance_mois": "10-20%",
+    "risque": "faible",
+    "levier": false,
+    "capital_allocation": 0.7
+  },
+  "Berzerk": {
+    "style": "explosif",
+    "type": "scalping / sniper",
+    "objectif": "performance maximale",
+    "sources": ["X", "Reddit", "Telegram", "News", "Microcaps"],
+    "performance_cible": "5-500%",
+    "risque": "élevé",
+    "levier": true,
+    "capital_allocation": 0.2
+  },
+  "Berzerk+": {
+    "style": "ultra-agressif",
+    "objectif": "chasse au pump",
+    "modules": ["scanner_social.py", "score_predictif.py", "execution_sniper.py"],
+    "intelligence": "IA cross-sentiment + timing + volume",
+    "performance_cible": "+100% à +500%",
+    "risque": "très élevé",
+    "levier": true,
+    "capital_allocation": 0.1
+  }
+}

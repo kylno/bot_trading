@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>🧠 Conseil stratégique IA</h1>
+
+<div style="background:#fff; padding:20px; border-radius:8px; box-shadow:0 0 10px #ccc;">
+    <p><strong>Stratégie la plus performante :</strong> {{ reco.strategie }}</p>
+    <p><strong>Crypto la plus rentable :</strong> {{ reco.symbole }}</p>
+    <p><strong>Taux de réussite global :</strong> {{ reco.taux }}</p>
+    <p><strong>Conseil IA :</strong> {{ reco.suggestion }}</p>
+</div>
+
+<a href="/dashboard" class="btn" style="margin-top:20px;">⬅️ Retour au cockpit</a>
+
+{% endblock %}

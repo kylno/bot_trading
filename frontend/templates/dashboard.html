@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>📊 Dashboard IA</h1>
+
+{% if ajout_ok %}
+    <p style="color: green;"><strong>✅ Trade ajouté avec succès !</strong></p>
+{% endif %}
+
+{% if erreur %}
+    <p style="color: red;"><strong>{{ erreur }}</strong></p>
+{% endif %}
+
+<!-- 🔍 Filtres -->
+<div style="background:#fff; padding:15px; border-radius:8px; box-shadow:0 0 10px #ccc; margin-bottom:20px;">
+    <h2>🔍 Filtres</h2>
+    <form method="GET" action="/dashboard">
+        <input name="symbole" placeholder="Symbole" value="{{ request.args.get('symbole', '') }}">
+        <input name="strategie" placeholder="Stratégie" value="{{ request.args.get('strategie', '') }}">
+        <input name="date_debut" type="date" value="{{ request.args.get('date_debut', '') }}">
+        <input name="date_fin" type="date" value="{{ request.args.get('date_fin', '') }}">
+        <button type="submit">Appliquer</button>
+    </form>
+</div>
+
+<!-- 📊 Tableau des trades -->
+<div style="background:#fff; padding:15px; border-radius:8px; box-shadow:0 0 10px #ccc; margin-bottom:20px;">
+    <h2>📊 Liste des trades</h2>
+    <table style="width:100%; border-collapse:collapse;">
+        <thead>
+            <tr style="background:#007ACC; color:white;">
+                <th>ID</th>
+                <th>Date</th>
+                <th>Heure</th>
+                <th>Symbole</th>
+                <th>Volume</th>
+                <th>Profit (€)</th>
+                <th>Stratégie</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in trades %}
+            <tr style="text-align:center;">
+                <td>{{ t.id }}</td>
+                <td>{{ t.date }}</td>
+                <td>{{ t.heure }}</td>
+                <td>{{ t.symbole }}</td>
+                <td>{{ t.volume }}</td>
+                <td>{{ t.profit }}</td>
+                <td>{{ t.strategie }}</td>
+                <td>
+                    <a href="/edit/{{ t.id }}">✏️</a>
+                    <a href="/delete/{{ t.id }}">🗑️</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- 🔁 Boutons cockpit -->
+<div style="margin-bottom:20px;">
+    <a href="/generer_graphes_plotly" class="btn">🔁 Générer les graphes interactifs IA</a>
+    <a href="/conseil_ia" class="btn">🧠 Voir le conseil IA</a>
+</div>
+
+<!-- 📈 Graphes interactifs Plotly -->
+<div style="background:#fff; padding:15px; border-radius:8px; box-shadow:0 0 10px #ccc; margin-bottom:20px;">
+    <h2>📈 Capital IA interactif</h2>
+    <iframe src="/static/graphs/capital_interactif.html" style="width:100%; height:400px; border:none;"></iframe>
+
+    <h2>📊 Stratégie interactive</h2>
+    <iframe src="/static/graphs/strategie_interactive.html" style="width:100%; height:400px; border:none;"></iframe>
+
+    <h2>🍩 Répartition symboles</h2>
+    <iframe src="/static/graphs/symboles_donut.html" style="width:100%; height:400px; border:none;"></iframe>
+</div>
+
+<!-- 🧠 Recommandation IA -->
+<div style="background:#fff; padding:15px; border-radius:8px; box-shadow:0 0 10px #ccc; margin-bottom:20px;">
+    <h2>🧠 Recommandation IA</h2>
+    <p><strong>Stratégie dominante :</strong> {{ reco.strategie }}</p>
+    <p><strong>Crypto la plus rentable :</strong> {{ reco.symbole }}</p>
+    <p><strong>Taux de réussite :</strong> {{ reco.taux }}</p>
+    <p><strong>Conseil IA :</strong> {{ reco.suggestion }}</p>
+</div>
+
+<!-- 📊 Jauge IA -->
+<div style="background:#fff; padding:15px; border-radius:8px; box-shadow:0 0 10px #ccc;">
+    <h2>📊 Jauge IA</h2>
+    <p><strong>Taux de réussite :</strong> {{ jauge }}</p>
+</div>
+
+{% endblock %}

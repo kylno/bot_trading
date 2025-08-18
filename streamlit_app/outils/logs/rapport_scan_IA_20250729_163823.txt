@@ -1,0 +1,4 @@
+✅ diagnostiqueur.py → Diagnostiqueur: RSI à 80 + MACD négatif ? Attention à un retournement imminent.
+✅ profiteur.py → Profiteur: Achetez sur les rumeurs, vendez sur les confirmations.
+✅ strategiste_fantome.py → StrategisteFantome: J’analyse les flux cachés… Attends que la volatilité chute avant d’agir.
+❌ __init__.py → aucune classe détectée

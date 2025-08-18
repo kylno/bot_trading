@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>📈 Statistiques IA</h1>
+
+<!-- 📊 Totaux -->
+<div style="background:#fff; padding:20px; margin-bottom:20px; border-radius:8px; box-shadow:0 0 10px #ccc;">
+    <h2>📊 Totaux</h2>
+    <p><strong>Total de trades :</strong> {{ stats.totaux.total_trades }}</p>
+    <p><strong>Trades gagnants :</strong> {{ stats.totaux.gagnants }}</p>
+    <p><strong>Trades perdants :</strong> {{ stats.totaux.perdants }}</p>
+    <p><strong>Taux de réussite :</strong> {{ jauge }}</p>
+</div>
+
+<!-- 💰 Profits par symbole -->
+<div style="background:#fff; padding:20px; margin-bottom:20px; border-radius:8px; box-shadow:0 0 10px #ccc;">
+    <h2>💰 Profits par symbole</h2>
+    {% for s in stats.symboles %}
+        <p><strong>{{ s.symbole }}</strong> : {{ s.profit_total }} €</p>
+        <div style="height:20px; background:#ddd; border-radius:4px; overflow:hidden;">
+            <div style="height:100%; background:#007ACC; width:{{ ((s.profit_total / 1000)|round(2)) * 100 }}%;"></div>
+        </div>
+    {% endfor %}
+</div>
+
+<!-- 🧠 Moyenne par stratégie -->
+<div style="background:#fff; padding:20px; margin-bottom:20px; border-radius:8px; box-shadow:0 0 10px #ccc;">
+    <h2>🧠 Profit moyen par stratégie</h2>
+    {% for s in stats.strategies %}
+        <p><strong>{{ s.strategie }}</strong> : {{ s.profit_moyen }} €</p>
+        <div style="height:20px; background:#eee; border-radius:4px; overflow:hidden;">
+            <div style="height:100%; background:#00BFA5; width:{{ ((s.profit_moyen / 1000)|round(2)) * 100 }}%;"></div>
+        </div>
+    {% endfor %}
+</div>
+
+<!-- 📈 Graphes interactifs Plotly -->
+<div style="background:#fff; padding:20px; border-radius:8px; box-shadow:0 0 10px #ccc;">
+    <h2>📈 Capital IA interactif</h2>
+    <iframe src="/static/graphs/capital_interactif.html" style="width:100%; height:400px; border:none;"></iframe>
+
+    <h2>📊 Stratégie interactive</h2>
+    <iframe src="/static/graphs/strategie_interactive.html" style="width:100%; height:400px; border:none;"></iframe>
+
+    <h2>🍩 Répartition symboles</h2>
+    <iframe src="/static/graphs/symboles_donut.html" style="width:100%; height:400px; border:none;"></iframe>
+</div>
+
+{% endblock %}

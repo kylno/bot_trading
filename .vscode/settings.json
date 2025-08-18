@@ -1,0 +1,7 @@
+{
+  "python.analysis.extraPaths": [
+    "./streamlit_app"
+  ],
+  "python.envFile": "${workspaceFolder}/.env",
+  "github-enterprise.uri": "https://[https"
+}

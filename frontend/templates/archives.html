@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>📂 Archives IA</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #f9f9f9; }
+        h2 { color: #007ACC; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin: 6px 0; }
+        a { color: #007ACC; font-weight: bold; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+     {% include 'header.html' %}
+    <h2>📦 Archives mensuelles IA</h2>
+    {% for mois, fichiers_mois in fichiers.items() %}
+        <h3>{{ mois }}</h3>
+        <ul>
+            {% for f in fichiers_mois %}
+                <li>📄 <a href="/exports/{{ mois }}/{{ f }}" target="_blank">{{ f }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "Berzerk+": {
+    "performance": 3.25,
+    "trades": 12,
+    "gagnants": 9,
+    "perdants": 3,
+    "profit": 125.50,
+    "drawdown": -2.1
+  },
+  "Casa de Papel": {
+    "performance": -0.85,
+    "trades": 8,
+    "gagnants": 3,
+    "perdants": 5,
+    "profit": -24.75,
+    "drawdown": -4.3
+  },
+  "Fourmi": {
+    "performance": 1.80,
+    "trades": 6,
+    "gagnants": 4,
+    "perdants": 2,
+    "profit": 42.10,
+    "drawdown": -1.2
+  }
+}

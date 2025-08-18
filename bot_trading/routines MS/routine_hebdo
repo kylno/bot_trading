@@ -1,0 +1,32 @@
+import json, os
+import pandas as pd
+from datetime import datetime, timedelta
+from core.triggers_bot import détecter_et_déclencher
+
+# Charger la config
+with open("config/config_ia.json", "r", encoding="utf-8") as f:
+    config = json.load(f)
+
+mode_vacances = config.get("vacances", False)
+
+def routine_hebdomadaire():
+    chemin = "logs/alertes_scored.jsonl"
+    if not os.path.exists(chemin):
+        return
+
+    with open(chemin, "r", encoding="utf-8") as f:
+        alertes = [json.loads(l) for l in f.readlines()]
+
+    if mode_vacances:
+        alertes = [a for a in alertes if a.get("importance", 0) >= 90]
+        print("🏖 Mode vacances activé : seules les alertes critiques sont conservées.")
+
+    df = pd.DataFrame(alertes)
+    df["timestamp"] = pd.to_datetime(df["timestamp"])
+    df_semaine = df[df["timestamp"] >= datetime.now() - timedelta(days=7)]
+    df_cumul = df_semaine.groupby("actif")["score"].sum().reset_index()
+    actifs_prioritaires = df_cumul[df_cumul["score"] >= 300]["actif"].tolist()
+
+    if actifs_prioritaires:
+        alertes_ciblées = df[df["actif"].isin(actifs_prioritaires)]
+        détecter_et_déclencher(alertes_ciblées.to_dict(orient="records"), mode_vacances=mode_vacances)

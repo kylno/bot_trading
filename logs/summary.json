@@ -1,0 +1,33 @@
+{
+  "timestamp": "2025-07-17T12:45:00",
+  "bots_actifs": ["Berzerk+", "Casa de Papel", "Fourmi"],
+  "tendances": {
+    "bitcoin": "🔼 Haussière",
+    "apple": "🔽 Baissière",
+    "solana": "⏸️ Neutre"
+  },
+  "meilleure_performance": {
+    "bot": "Berzerk+",
+    "performance": 3.25,
+    "profit": 125.50
+  },
+  "alerte_critique": {
+    "texte": "Bitcoin pump imminent",
+    "score": 95,
+    "source": "X"
+  },
+  "recommandations": [
+    {
+      "bot": "Berzerk+",
+      "actif": "bitcoin",
+      "score": 95,
+      "action": "Entrée agressive"
+    },
+    {
+      "bot": "Casa de Papel",
+      "actif": "apple",
+      "score": 92,
+      "action": "Réduction d'exposition"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "source": "X",
+    "texte": "Bitcoin pump imminent",
+    "timestamp": "2025-07-17T12:00:00",
+    "score": 95
+  },
+  {
+    "source": "News",
+    "texte": "Apple chute brutale",
+    "timestamp": "2025-07-17T12:01:00",
+    "score": 88
+  },
+  {
+    "source": "Discord",
+    "texte": "Solana breakout confirmé",
+    "timestamp": "2025-07-17T12:02:00",
+    "score": 91
+  },
+  {
+    "source": "Telegram",
+    "texte": "ETH liquidation massive",
+    "timestamp": "2025-07-17T12:03:00",
+    "score": 42
+  },
+  {
+    "source": "X",
+    "texte": "Gold rally en cours",
+    "timestamp": "2025-07-17T12:04:00",
+    "score": 78
+  }
+]

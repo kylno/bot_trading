@@ -1,0 +1,11 @@
+{
+    "modules": {
+        "pandas": "OK",
+        "requests": "OK"
+    },
+    "apis": {
+        "CoinGecko": "OK",
+        "Telegram": "OK"
+    },
+    "timestamp": "2025-07-23 14:23:47"
+}

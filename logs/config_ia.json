@@ -1,0 +1,19 @@
+{
+  "version": "1.3.5",
+  "auteur": "Kylian",
+  "mode_diagnostic": true,
+  "niveau_severite": "standard",
+  "notifications": {
+    "canal": "telegram",
+    "envoyer_si_erreur": true,
+    "envoyer_rapport": false
+  },
+  "auto_blocage": {
+    "actif": true,
+    "seuil_erreurs": 3
+  },
+  "visuel": {
+    "theme": "dark",
+    "animations": true
+  }
+}

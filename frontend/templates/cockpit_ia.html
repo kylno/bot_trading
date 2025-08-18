@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Cockpit IA</title>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #00ffcc;
+      font-family: 'Arial', sans-serif;
+      padding: 40px;
+    }
+    h1 {
+      text-align: center;
+      color: #ff00ff;
+    }
+    button {
+      background-color: #222;
+      color: #fff;
+      padding: 12px 25px;
+      margin: 10px;
+      border: 2px solid #00ffcc;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #00ffcc;
+      color: #000;
+    }
+    #resultats {
+      margin-top: 30px;
+      width: 600px;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #222;
+      color: #00ffcc;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧠 Cockpit IA – Modules Stratégiques</h1>
+  <button onclick="lancerModule('/run_profiteur')">🤑 Lancer IA Profiteur</button>
+  <button onclick="lancerModule('/run_accumulateur')">📥 Lancer IA Accumulateur</button>
+
+  <table id="resultats">
+    <thead>
+      <tr><th>Module</th><th>Analyse</th><th>Heure</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    function lancerModule(route) {
+      fetch(route)
+        .then(res => res.json())
+        .then(data => {
+          const table = document.querySelector("#resultats tbody");
+          const row = document.createElement("tr");
+          const heure = new Date().toLocaleTimeString();
+
+          row.innerHTML = `<td>${data.module}</td><td>${data.resultat}</td><td>${heure}</td>`;
+          table.appendChild(row);
+        });
+    }
+  </script>
+</body>
+</html>

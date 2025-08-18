@@ -1,0 +1,11 @@
+{
+  "bot_name": "Berserk",
+  "token_cible": "DOGE/USDT",
+  "seuil_variation": 1.5,
+  "pourcentage_entree": 0.9,
+  "pourcentage_sortie": 0.3,
+  "intervalle_scan": 5,
+  "mode_securite": true,
+  "alertes": true,
+  "actif": true
+}

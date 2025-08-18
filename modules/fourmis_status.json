@@ -1,0 +1,6 @@
+{
+  "BTC": { "signal": "STRONG_BUY", "active": true },
+  "ETH": { "signal": "SELL", "active": false },
+  "SOL": { "signal": "NEUTRAL", "active": true },
+  "XRP": { "signal": "STRONG_BUY", "active": true }
+}

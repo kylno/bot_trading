@@ -1,0 +1,6 @@
+🧾 Rapport d’importation :
+[31m❌[0m diagnostiqueur.py → aucune classe détectée
+[31m❌[0m profiteur.py → aucune classe détectée
+[31m❌[0m strategiste_fantome.py → aucune classe détectée
+
+🧪 Résultats conseiller() :

@@ -1,0 +1,12 @@
+🧾 Rapport d’importation :
+[31m❌[0m accumulateur.py → aucune classe détectée
+[31m❌[0m agent_cerveaux.py → aucune classe détectée
+[31m❌[0m casa_de_papel.py → aucune classe détectée
+[31m❌[0m diagnostiqueur.py → aucune classe détectée
+[31m❌[0m entrenement.py → aucune classe détectée
+[31m❌[0m profiteur.py → aucune classe détectée
+[31m❌[0m reseaux_ia.py → aucune classe détectée
+[31m❌[0m strategiste_fantome.py → aucune classe détectée
+[31m❌[0m utils_ia.py → aucune classe détectée
+
+🧪 Résultats conseiller() :

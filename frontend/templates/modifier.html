@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modifier un trade</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial; background-color: #f0f0f0; padding: 40px; }
+        h2 { text-align: center; color: #007ACC; }
+        form { background-color: #fff; padding: 20px; max-width: 500px; margin: auto; box-shadow: 0 0 10px #ccc; border-radius: 8px; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        input, select { width: 100%; padding: 8px; margin-top: 5px; border-radius: 4px; border: 1px solid #ccc; }
+        button { margin-top: 20px; padding: 10px 20px; background-color: #007ACC; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+        button:hover { background-color: #005a99; }
+    </style>
+</head>
+<body>
+
+    {% include 'header.html' %}
+    <h2>🖊️ Modifier un trade existant</h2>
+
+    <form method="POST">
+        <label for="date">Date</label>
+        <input type="date" name="date" value="{{ trade.date }}" required>
+
+        <label for="heure">Heure</label>
+        <input type="time" name="heure" value="{{ trade.heure }}" required>
+
+        <label for="symbole">Symbole</label>
+        <select name="symbole" required>
+            <option value="BTC" {% if trade.symbole == "BTC" %}selected{% endif %}>BTC</option>
+            <option value="ETH" {% if trade.symbole == "ETH" %}selected{% endif %}>ETH</option>
+            <option value="XRP" {% if trade.symbole == "XRP" %}selected{% endif %}>XRP</option>
+        </select>
+
+        <label for="volume">Volume</label>
+        <input type="number" step="0.01" name="volume" value="{{ trade.volume }}" required>
+
+        <label for="profit">Profit (€)</label>
+        <input type="number" step="0.01" name="profit" value="{{ trade.profit }}" required>
+
+        <label for="strategie">Stratégie IA</label>
+        <select name="strategie" required>
+            <option value="shadow_bot" {% if trade.strategie == "shadow_bot" %}selected{% endif %}>shadow_bot</option>
+            <option value="fourmi_bot" {% if trade.strategie == "fourmi_bot" %}selected{% endif %}>fourmi_bot</option>
+        </select>
+
+        <button type="submit">💾 Sauvegarder les modifications</button>
+    </form>
+
+</body>
+</html>
