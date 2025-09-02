@@ -1,0 +1,16 @@
+[
+  {
+    "timestamp": "2025-09-01T10:00:00",
+    "symbol": "DOGE",
+    "variation": 65.2,
+    "price": 0.082,
+    "brain": "microcap1"
+  },
+  {
+    "timestamp": "2025-09-01T10:05:00",
+    "symbol": "BTC",
+    "variation": 12.4,
+    "price": 27000,
+    "brain": "casadepapel"
+  }
+]

@@ -1,0 +1,21 @@
+
+--- SESSION ---
+DÉPLACÉ : realtime_berserk.py → bots/
+DÉPLACÉ : discord_bot.py → bots/
+DÉPLACÉ : discord_switch.py → bots/
+DÉPLACÉ : filtrer_data.py → modules/
+DÉPLACÉ : generateur.py → modules/
+DÉPLACÉ : grapher.py → modules/
+DÉPLACÉ : executor.py → modules/
+DÉPLACÉ : missions.py → modules/
+DÉPLACÉ : emailer.py → modules/
+DÉPLACÉ : config_email.json → config/
+DÉPLACÉ : config_mode.json → config/
+DÉPLACÉ : settings.json → config/
+DÉPLACÉ : requirements.txt → config/
+DÉPLACÉ : menu.py → core/
+DÉPLACÉ : dashboard.py → core/
+DÉPLACÉ : install_module.bat → tools/
+DÉPLACÉ : lancer_cockpit.bat → tools/
+DÉPLACÉ : lancer_dashboard.bat → tools/
+DÉPLACÉ : fond.png → frontend/static/images/
