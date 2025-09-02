@@ -1,0 +1,56 @@
+# 🐍 Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+*.pyo
+*.pyd
+*.db
+
+# 📦 Environnements
+.env
+*.env
+venv/
+env/
+ENV/
+.venv/
+
+# 🧪 Tests et logs
+*.log
+*.txt
+*.csv
+*.jsonl
+*.sqlite
+*.db
+*.bak
+*.tmp
+
+# 📸 Assets et images générées
+*.png
+*.gif
+*.jpg
+*.jpeg
+*.svg
+
+# 📄 PDF et rapports
+*.pdf
+
+# 🧰 IDE et outils
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# 📦 Build / dist
+build/
+dist/
+*.spec
+
+# 🧼 Dossiers de copie
+* - Copie/
+legacy/autres/
+
+# 📚 Documentation temporaire
+docs_site/
+docs_site - Copie/
