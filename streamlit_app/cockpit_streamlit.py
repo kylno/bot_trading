@@ -161,3 +161,53 @@ if ia1 != ia2:
         duel_ia(agents[ia1], agents[ia2])
 else:
     st.info("🙃 Sélectionne deux IA différentes pour comparer leurs stratégies.")
+    
+    agents = {
+    "profiteur": ProfiteurIA(),
+    "accumulateur": AccumulateurIA(),
+    "casa": CasaDePapelIA(),
+    "diagnostiqueur": DiagnostiqueurIA(),
+    "fantome": StrategisteFantome(),
+    "berzerk": BerzerkIA(),
+    "microcap1": microcap1(),
+    "microcap2": microcap2()
+}
+    
+    def afficher_berzerk():
+     st.markdown("## ⚡ Carte d’identité : Berzerk+")
+    st.image("https://cdn-icons-png.flaticon.com/512/3135/3135715.png", width=150)
+    col1, col2 = st.columns(2)
+    with col1:
+        st.write("**Style** : Agressif, rapide, répétitif")
+        st.write("**Spécialité** : Scalping intensif")
+    with col2:
+        st.write("**Couleur** : 🔥 Rouge vif")
+        st.write("**Réputation** : Frappe courte, frappe souvent")
+    st.divider()
+    st.success(f"🧠 *« {agents['berzerk'].conseiller()} »*") 
+    
+    def afficher_microcap1():
+     st.markdown("## 📈 Carte d’identité : Microcap 1")
+    st.image("https://cdn-icons-png.flaticon.com/512/2910/2910791.png", width=150)
+    col1, col2 = st.columns(2)
+    with col1:
+        st.write("**Style** : Explorateur, visionnaire")
+        st.write("**Spécialité** : Détection de pépites")
+    with col2:
+        st.write("**Couleur** : 🟡 Jaune spéculatif")
+        st.write("**Réputation** : Parie sur l’inattendu")
+    st.divider()
+    st.success(f"🧠 *« {agents['microcap1'].conseiller()} »*")
+    
+    def afficher_microcap2():
+     st.markdown("## 📉 Carte d’identité : Microcap 2")
+    st.image("https://cdn-icons-png.flaticon.com/512/2910/2910795.png", width=150)
+    col1, col2 = st.columns(2)
+    with col1:
+        st.write("**Style** : Sniper, discret, tactique")
+        st.write("**Spécialité** : Exploitation de faibles volumes")
+    with col2:
+        st.write("**Couleur** : 🧊 Bleu glacial")
+        st.write("**Réputation** : Fait exploser ce que personne ne regarde")
+    st.divider()
+    st.success(f"🧠 *« {agents['microcap2'].conseiller()} »*")

@@ -16,7 +16,7 @@ col1, col2, col3, col4 = st.columns(4)
 
 with col1:
     st.markdown("### ✅ Validation système")
-    st.image(check_img, caption="Check (validation système)", use_column_width="10px")
+    st.image(check_img, caption="Check (validation système)", use_column_width=True)
 
 with col2:
     st.markdown("### ❌ Panne détectée")
