@@ -146,6 +146,12 @@ elif choix == "casa":
     afficher_casa()
 elif choix == "fantome":
     afficher_fantome()
+elif choix == "berzerk":
+    afficher_berzerk()
+elif choix == "microcap1":
+    afficher_microcap1()
+elif choix == "microcap2":
+    afficher_microcap2()
 
 # 🔊 Synthèse vocale
 if st.button("🔊 Faire parler l'IA"):

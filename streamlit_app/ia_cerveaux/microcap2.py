@@ -1,13 +1,21 @@
-class Microcap2:
+class MicroCap2IA:
     def __init__(self):
-        self.nom = "Microcap 2"
+        self.nom = "MicroCap2"
+        self.strategie = "exploitation_hausses_massives"
+        self.seuil_min = 1.0   # 100%
+        self.seuil_max = 20.0  # 2000%
 
-    def conseiller(self):
-        return "Ce que personne ne regarde, je le fais exploser."
-    
-    class Microcap2:
-        def __init__(self):
-         self.nom = "Microcap 2"
+    def analyser(self, donnees):
+        variations = donnees.get("variations", [])
+        signaux = [v for v in variations if self.seuil_min <= v <= self.seuil_max]
+        signal = bool(signaux)
+        confiance = round(len(signaux) / max(len(variations), 1), 2)
+        return {
+            "signal": signal,
+            "confiance": confiance,
+            "strategie": self.strategie
+        }
 
-    def conseiller(self):
-        return "Ce que personne ne regarde, je le fais exploser."
+    def afficher_resume(self):
+        print(f"[{self.nom}] Stratégie : {self.strategie}")
+        print(f"Seuils : {self.seuil_min*100}% à {self.seuil_max*100}%")
